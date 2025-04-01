@@ -1,0 +1,38 @@
+import java.util.*;
+class DS5{
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Messsage");
+        String message = sc.nextLine();
+        System.out.println("Enter the number of processes");
+        int n = sc.nextInt();
+
+        System.out.println("Processes are ");
+        for(int i=1;i<=n;i++){
+            System.out.println(i+"\n");
+        }
+
+        System.out.println("Enter the sender");
+        int sender = sc.nextInt();
+        System.out.println("Enter the receiver");
+        int receiver = sc.nextInt();
+
+        for(int i=1;i<=n;i++){
+
+            if(i==sender){
+                System.out.println("Sender Process->" + sender);
+                System.out.println("Token is received by sender");
+                System.out.println("Message to be send" + message);
+                break;
+            }
+        }
+        for(int i=sender;i<=n;i=(i%n)+1){
+            if(i==receiver){
+                System.out.println("Receiver Process" + receiver);
+                System.out.println("Messgae received " + message);
+                break;
+            }
+        }
+    }
+}
